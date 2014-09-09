@@ -1,0 +1,28 @@
+
+# Server settings
+server:
+    maxThreads: 200
+    minThreads: 200
+    maxQueuedRequests: 9999
+    requestLog:
+      appenders: []
+
+    applicationConnectors:
+        - type: http
+          bindHost: @OPENSHIFT_DIY_IP@
+
+    adminConnectors:
+        - type: http
+          port: @OPENSHIFT_DIY_PORT@
+
+
+#Http client settings
+httpClient:
+    maxConnectionsPerRoute: 9999
+    maxConnections: 9999
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
